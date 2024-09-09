@@ -1,5 +1,4 @@
 import SimpleLightbox from 'simplelightbox';
-
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const images = [
@@ -72,11 +71,10 @@ const gallery = document.querySelector('.gallery');
 const galleryMarkup = images
   .map(({ preview, original, description }) => {
     return ` <li class="gallery-item">
-      <a class="gallery-link" href="${original} ">
+      <a class="gallery-link" href="${original}">
         <img
           class="gallery-image"
           src="${preview}"
-          data-source="${original}"
           alt="${description}"
         />
       </a>
@@ -85,23 +83,8 @@ const galleryMarkup = images
   .join('');
 
 gallery.insertAdjacentHTML('beforeend', galleryMarkup);
-gallery.addEventListener('click', event => {
-  event.preventDefault();
-  const target = event.target;
 
-  if (target.classList.contains('gallery-image')) {
-    const originalLink = target.dataset.source;
-
-    const description = target.description;
-
-    const instance = galleryMarkup.create(`
-        <img src="${originalLink}" width="1112" height="640" alt="${description}" />
-      `);
-    instance.show();
-  }
-});
-
-const $gallery = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionPosition: 'bottom',
   captionDelay: 250,
