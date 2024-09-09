@@ -9,8 +9,19 @@
   </head>
   <body>
     <section>
-      <button><a href="./index.html">Go Home</a></button>
-      <h1>Welcome Form</h1>
+      <button class="btn"><a href="./index.html">Go Home</a></button>
+      <form class="feedback-form" autocomplete="off">
+        <label>
+          Email
+          <input type="email" name="email" autofocus />
+        </label>
+        <br />
+        <label>
+          Message
+          <textarea name="message" rows="8"></textarea></label
+        ><br />
+        <button type="submit">Submit</button><br />
+      </form>
     </section>
 
     <script type="module" src="./js/2-form.js"></script>
