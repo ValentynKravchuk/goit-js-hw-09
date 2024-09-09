@@ -1,2 +1,2 @@
-import"./assets/styles-t547u1h4.js";console.log("Form ");
+import"./assets/styles-DnCLcmjj.js";const e=document.querySelector(".feedback-form"),l="feedback-form-state",t=JSON.parse(localStorage.getItem(l))||{email:"",message:""};e.email.value=t.email;e.message.value=t.message;e.addEventListener("input",a=>{t[a.target.name]=a.target.value.trim(),localStorage.setItem(l,JSON.stringify(t))});e.addEventListener("submit",a=>{if(a.preventDefault(),!e.email.value||!e.message.value){alert("Fill please all fields");return}console.log(t),localStorage.removeItem(l),a.target.reset()});
 //# sourceMappingURL=2-form.js.map
